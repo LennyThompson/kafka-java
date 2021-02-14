@@ -1,0 +1,20 @@
+// ========================================================
+// Copyright © 2021 Boeing.
+// ========================================================
+
+syntax = "proto3";
+
+package classification;
+
+enum Type {
+  UNCLASSIFIED = 0;
+  // TODO
+}
+
+// TODO: Investigate needs here
+// Will be multiple levels as per security docs
+// e.g. Unclass, Official Sens, Secret, Top Secret, etc...
+// e.g. AUSTEO, FIVEYES, etc...
+message Classification {
+  Type type = 1;
+}

@@ -1,0 +1,17 @@
+// ========================================================
+// Copyright © 2021 Boeing.
+// ========================================================
+
+syntax = "proto3";
+
+package common;
+
+message Uuid {
+  // TODO: Consider bytes instead
+  string value = 1;
+}
+
+message Id {
+  Uuid uuid = 1;
+  string name = 2;
+}

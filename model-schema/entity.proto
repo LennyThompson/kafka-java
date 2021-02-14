@@ -1,0 +1,24 @@
+// ========================================================
+// Copyright © 2021 Boeing.
+// ========================================================
+
+syntax = "proto3";
+
+package entity;
+
+import "google/protobuf/timestamp.proto";
+
+import "header.proto";
+import "common.proto";
+import "kinematics.proto";
+
+message EntityData {
+  google.protobuf.Timestamp timestamp = 1;
+  common.Id id = 2;
+  kinematics.Kinematics kinematics = 3;
+}
+
+message EntityMessage {
+  header.Header header = 1;
+  repeated EntityData data = 2;
+}

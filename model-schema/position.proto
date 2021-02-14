@@ -1,0 +1,33 @@
+// ========================================================
+// Copyright © 2021 Boeing.
+// ========================================================
+
+syntax = "proto3";
+
+package position;
+
+message CartesianPosition {
+  double x = 1;
+  double y = 2;
+  double z = 3;
+}
+
+message PolarPosition {
+  double r = 1;
+  double a = 2; // radians
+  double z = 3;
+}
+
+message GeographicPosition {
+  double latitude = 1; // radians
+  double longitude = 2; // radians
+  double altitude = 3; // meters
+}
+
+message Position {
+  oneof type {
+    CartesianPosition cartesian = 1;
+    PolarPosition polar = 2;
+    GeographicPosition geographic = 3;
+  }
+}

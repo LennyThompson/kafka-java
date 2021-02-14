@@ -1,0 +1,32 @@
+// ========================================================
+// Copyright © 2021 Boeing.
+// ========================================================
+
+syntax = "proto3";
+
+package header;
+
+import "google/protobuf/timestamp.proto";
+
+import "classification.proto";
+import "common.proto";
+
+// TODO: Investigate needs here
+// perhaps split as type/category?
+// e.g. live/replayed, real/simulated, etc...
+enum MessageType {
+  LIVE = 0;
+  SIMULATED = 1;
+  REPLAYED = 2;
+}
+
+message Header {
+  google.protobuf.Timestamp timestamp = 1;
+  classification.Classification classification = 2;
+  MessageType type = 3;
+
+  // Originating system ID
+  common.Id System = 4;
+  // Originating service ID
+  common.Id Service = 5;
+}

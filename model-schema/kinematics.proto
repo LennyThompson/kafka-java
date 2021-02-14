@@ -1,0 +1,16 @@
+// ========================================================
+// Copyright © 2021 Boeing.
+// ========================================================
+
+syntax = "proto3";
+
+package kinematics;
+
+import "covariance.proto";
+import "position.proto";
+
+message Kinematics {
+  position.Position position = 1;
+  covariance.CovarianceSqrt position_covariance_sqrt = 2;
+  // TODO: velocity, etc...
+}
