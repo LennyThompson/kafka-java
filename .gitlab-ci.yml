@@ -9,13 +9,14 @@ cache:
     - .m2/repository/
     - target/
 
-artifacts:
-  paths:
-    - target/kafka-model-schema-java-1.0-SNAPSHOT.jar
-
 
 build:
   stage: build
+  
+  artifacts:
+    paths:
+      - target/kafka-model-schema-java-1.0-SNAPSHOT.jar
+
   script:
     - mvn $MAVEN_CLI_OPTS package
 
