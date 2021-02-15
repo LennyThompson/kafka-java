@@ -9,6 +9,11 @@ cache:
     - .m2/repository/
     - target/
 
+artifacts:
+  paths:
+    - target/kafka-model-schema-java-1.0-SNAPSHOT.jar
+
+
 build:
   stage: build
   script:
