@@ -21,7 +21,12 @@
             <artifactId>protobuf-java</artifactId>
             <version>3.12.2</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.github.os72</groupId>
+            <artifactId>protoc-jar-maven-plugin</artifactId>
+            <version>3.11.4</version>
+            <type>maven-plugin</type>
+        </dependency>
     </dependencies>
 
     <build>
