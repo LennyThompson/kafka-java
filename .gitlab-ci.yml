@@ -23,7 +23,7 @@ build:
 deploy:
   image: maven:3.6-jdk-14
   script:
-    - 'mvn deploy -s ci_settings.xml'
+    - 'mvn Dmaven.wagon.http.ssl.insecure=true deploy -s ci_settings.xml'
   only:
     - master
 
