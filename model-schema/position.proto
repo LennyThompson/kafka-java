@@ -13,12 +13,17 @@ message CartesianPosition {
 }
 
 message PolarPosition {
-  double r = 1;
-  double a = 2; // radians
-  double z = 3;
+  double range = 1;
+  double azimuth = 2; // radians
 }
 
-message GeographicPosition {
+message SphericalPosition {
+  double range = 1;
+  double azimuth = 2; // radians
+  double elevation = 3; // radians
+}
+
+message GeographicalPosition {
   double latitude = 1; // radians
   double longitude = 2; // radians
   double altitude = 3; // meters
@@ -28,6 +33,7 @@ message Position {
   oneof type {
     CartesianPosition cartesian = 1;
     PolarPosition polar = 2;
-    GeographicPosition geographic = 3;
+    SphericalPosition spherical = 3;
+    GeographicalPosition geographical = 4;
   }
 }
